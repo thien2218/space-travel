@@ -5,7 +5,7 @@ function MyApp({ Component, pageProps }) {
    return (
       <>
          <Head>
-            <title>Planets Tour</title>
+            <title>Space Travel</title>
          </Head>
          <Component {...pageProps} />
       </>
