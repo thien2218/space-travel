@@ -108,7 +108,7 @@ const DesignSystem = () => {
             
             <div class="flex" style={{ marginTop: '5rem' }}>
                <div>
-                  <a href="#" className='large-btn uppercase ff-serif text-dark bg-white fs-600 grid'>Explore</a>
+                  <a href="#" className='large-btn uppercase ff-serif text-dark bg-white fs-600'>Explore</a>
                </div>
                
                <div style={{ marginBottom: '50vh', '--flow-space': '4rem' }} className='flow'>
