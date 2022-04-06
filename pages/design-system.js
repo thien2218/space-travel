@@ -90,7 +90,7 @@ const DesignSystem = () => {
             
             <div>
                <nav>
-                  <ul class="flex primary-navigation underlined-indicator">
+                  <ul className="flex primary-navigation underlined-indicator">
                      <li className='uppercase ff-sans-cond letter-spacing-2 fs-300 active'>
                         <a href="#"><span>00</span>Active</a>
                      </li>
@@ -106,7 +106,7 @@ const DesignSystem = () => {
                </nav>
             </div>
             
-            <div class="flex" style={{ marginTop: '5rem' }}>
+            <div className="flex" style={{ marginTop: '5rem' }}>
                <div>
                   <a href="#" className='large-btn uppercase ff-serif text-dark bg-white fs-600'>Explore</a>
                </div>

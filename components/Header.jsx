@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { images } from '../public/constants';
 import { useState } from 'react';
 
-const Header = () => {
+const Header = ({ pathname }) => {
    const [open, setOpen] = useState(false);
 
    return (
@@ -16,19 +16,19 @@ const Header = () => {
          <button onClick={() => setOpen(!open)} className='mobile-nav-toggle' aria-controls='primary-nav' style={{ backgroundImage: `url(/assets/shared/icon-${open ? 'close' : 'hamburger'}.svg)` }}><span className="sr-only" aria-expanded='false'>Menu</span></button>
 
          <nav>
-            <ul id='primary-nav' class={`flex primary-navigation underlined-indicator ${open ? 'slide-in' : ''}`}>
-               <li className='uppercase ff-sans-cond letter-spacing-2 fs-300 active'>
-                  <Link href='/'><a><span aria-hidden='true'>00</span>Home</a></Link>
-               </li>
-               <li className='uppercase ff-sans-cond letter-spacing-2 fs-300'>
-                  <Link href='/destination'><a><span aria-hidden='true'>01</span>Destination</a></Link>
-               </li>
-               <li className='uppercase ff-sans-cond letter-spacing-2 fs-300'>
-                  <Link href='/crew'><a><span aria-hidden='true'>02</span>Crew</a></Link>
-               </li>
-               <li className='uppercase ff-sans-cond letter-spacing-2 fs-300'>
-                  <Link href='/technology'><a><span aria-hidden='true'>03</span>Technology</a></Link>
-               </li>
+            <ul id='primary-nav' className={`flex primary-navigation underlined-indicator ${open ? 'slide-in' : ''}`}>
+               <Link href='/'><li className={`uppercase ff-sans-cond letter-spacing-2 fs-300 ${pathname==''?'active':''}`}>
+                  <a><span aria-hidden='true'>00</span>Home</a>
+               </li></Link>
+               <Link href='/destination'><li className={`uppercase ff-sans-cond letter-spacing-2 fs-300 ${pathname=='destination'?'active':''}`}>
+                  <a><span aria-hidden='true'>01</span>Destination</a>
+               </li></Link>
+               <Link href='/crew'><li className={`uppercase ff-sans-cond letter-spacing-2 fs-300 ${pathname=='crew'?'active':''}`}>
+                  <a><span aria-hidden='true'>02</span>Crew</a>
+               </li></Link>
+               <Link href='/technology'><li className={`uppercase ff-sans-cond letter-spacing-2 fs-300 ${pathname=='technology'?'active':''}`}>
+                  <a><span aria-hidden='true'>03</span>Technology</a>
+               </li></Link>
             </ul>
          </nav>
       </header>

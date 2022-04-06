@@ -1,0 +1,45 @@
+/* Destination layout */
+.grid-container--destination {
+   --flow-space: 2rem;
+   grid-template-areas:
+      'title'
+      'image'
+      'tabs'
+      'content';
+}
+
+.numbered-title {
+   grid-area: title;
+}
+
+.grid-container--destination > .destination-image {
+   grid-area: image;
+   max-width: 60%;
+}
+
+.grid-container--destination > .tab-list {
+   grid-area: tabs;
+}
+
+.grid-container--destination > .destination-info {
+   grid-area: content;
+}
+
+.destination-meta {
+   flex-direction: column;
+   border-top: 1px solid rgba( var(--color-white), .2 );
+   padding-top: 2.5rem;
+   margin-top: 2.5rem;
+}
+
+@media (min-width: 35em) {
+   .numbered-title {
+      justify-self: start;
+      margin-top: 2rem;
+   }
+
+   .destination-meta {
+      flex-direction: row;
+      justify-content: space-evenly;
+   }
+}
