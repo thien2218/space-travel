@@ -177,6 +177,10 @@ textarea {
    transform: translateY(0);
 }
 
+.height100 {
+   min-height: 100vh;
+}
+
 /* Colors */
 .bg-dark { background-color: rgba( var(--color-dark) ); }
 .bg-accent { background-color: rgba( var(--color-light) ); }
@@ -312,7 +316,6 @@ textarea {
 
 /* Home */
 .home {
-   min-height: 100vh;
    display: grid;
    grid-template-rows: min-content 1fr;
    background-image: url(../public/assets/home/background-home-mobile.jpg);
@@ -349,18 +352,29 @@ textarea {
       gap: var(--container-gap, 2rem);
    }
 
-   .grid-container > *:first-child {
-      grid-column: 2;
-   }
-   
-   .grid-container > *:last-child {
-      grid-column: 3;
-      /* justify-self: end; */
-   }
-
    .grid-container--home {
       padding-bottom: max(6rem, 20vh);
       align-items: end;
+   }
+
+   .grid-container--home > *:first-child {
+      grid-column: 2;
+   }
+   
+   .grid-container--home > *:last-child {
+      grid-column: 3;
+   }
+
+   .grid-container--destination {
+      justify-items: start;
+      grid-template-areas:
+         '. title title .'
+         '. image tabs .'
+         '. image content .';
+   }
+
+   .grid-container--destination > .destination-image {
+      max-width: 90%;
    }
 }
 

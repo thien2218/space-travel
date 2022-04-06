@@ -1,4 +1,9 @@
 /* Destination layout */
+.destination {
+   background-image: url(../public/assets/destination/background-destination-mobile.jpg);
+   background-size: cover;
+}
+
 .grid-container--destination {
    --flow-space: 2rem;
    grid-template-areas:
@@ -32,7 +37,15 @@
    margin-top: 2.5rem;
 }
 
+.destination-meta p {
+   font-size: 1.75rem;
+}
+
 @media (min-width: 35em) {
+   .destination {
+      background-image: url(../public/assets/destination/background-destination-tablet.jpg);
+   }
+
    .numbered-title {
       justify-self: start;
       margin-top: 2rem;
@@ -41,5 +54,16 @@
    .destination-meta {
       flex-direction: row;
       justify-content: space-evenly;
+   }
+}
+
+@media (min-width: 45em) {
+   .destination {
+      background-image: url(../public/assets/destination/background-destination-desktop.jpg);
+   }
+
+   .destination-meta {
+      justify-content: start;
+      --gap: min(8vw, 5rem);
    }
 }

@@ -13,26 +13,26 @@ import spaceport from '../assets/technology/image-spaceport-landscape.jpg';
 import spaceCapsule from '../assets/technology/image-space-capsule-landscape.jpg';
 
 import logo from '../assets/shared/logo.svg';
-import menu from '../assets/shared/icon-hamburger.svg';
-import close from '../assets/shared/icon-close.svg';
 
 const images = {
-   anousheh,
-   douglas,
-   mark,
-   victor,
+   crew: [
+      anousheh,
+      douglas,
+      mark,
+      victor,
+   ],
    planets: [
       moon,
       mars,
       europa,
       titan,
    ],
-   launchVehicle,
-   spaceport,
-   spaceCapsule,
+   tech: [
+      launchVehicle,
+      spaceport,
+      spaceCapsule,
+   ],
    logo,
-   menu,
-   close
 }
 
 export default images

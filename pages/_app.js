@@ -10,11 +10,11 @@ function MyApp({ Component, pageProps }) {
    return (
       <>
          <Head>
-            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <meta name="viewport" content="width=device-width,initial-scale=1.0" />
             <title>Space Travel</title>
          </Head>
          
-         <div className={`${pathname == '' ? 'home' : pathname}`}>
+         <div className={`${pathname == '' ? 'home' : pathname} height100`}>
             <a href="#main" className='skip-to-main'>Skip to main</a>
             <Header pathname={pathname} />
             <Component {...pageProps} />
