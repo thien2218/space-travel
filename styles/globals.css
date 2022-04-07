@@ -1,5 +1,7 @@
-@import url(../components/Header.css);
-@import url(../components/Destinations.css);
+@import url(./Header.css);
+@import url(./Destinations.css);
+@import url(./Crew.css);
+@import url(./Technology.css);
 
 /* ------------------ */
 /* CUSTOM PROPS */
@@ -221,7 +223,6 @@ textarea {
    font-family: var(--ff-sans-cond);
    font-size: var(--fs-500);
    text-transform: uppercase;
-   color: rgba( var(--color-light) );
 }
 .numbered-title span {
    color: rgba( var(--color-white), .25 );
@@ -254,7 +255,7 @@ textarea {
 
 .underlined-indicator > * {
    cursor: pointer;
-   padding: var(--underline-gap, 1rem) 0;
+   padding: var(--underline-gap, .75rem) 0;
    border-bottom: 3px solid rgba( var(--color-white), 0 );
 }
 
@@ -263,7 +264,7 @@ textarea {
    border-bottom: 3px solid rgba( var(--color-white), .5 );
 }
 
-.underlined-indicator > .active,
+.underlined-indicator > .active-true,
 .underlined-indicator > [aria-selected='true'] {
    border-bottom: 3px solid rgba( var(--color-white), 1 );
    color: rgba( var(--color-white) );
@@ -290,7 +291,6 @@ textarea {
 }
 
 .number-indicator {
-   grid-auto-columns: min-content;
    --gap: 2rem;
 }
 
@@ -341,6 +341,21 @@ textarea {
    line-height: .8;
 }
 
+.grid-container p {
+   max-width: 50ch;
+}
+
+@media (min-width: 35em) {
+   .home {
+      background-position: center center;
+      background-image: url(../public/assets/home/background-home-tablet.jpg);
+   }
+
+   .grid-container--crew {
+      padding-bottom: 0;
+   }
+}
+
 @media (min-width: 45em) {
    .home {
       background-image: url(../public/assets/home/background-home-desktop.jpg);
@@ -367,24 +382,10 @@ textarea {
 
    .grid-container--destination {
       justify-items: start;
-      grid-template-areas:
-         '. title title .'
-         '. image tabs .'
-         '. image content .';
+      align-items: start;
    }
 
-   .grid-container--destination > .destination-image {
-      max-width: 90%;
-   }
-}
-
-@media (min-width: 35em) {
-   .home {
-      background-position: center center;
-      background-image: url(../public/assets/home/background-home-tablet.jpg);
-   }
-
-   .grid-container * {
-      max-width: 50ch;
+   .grid-container--crew > *:not(.crew-image) {
+      justify-self: start;
    }
 }

@@ -43,15 +43,15 @@
       transition: transform .5s ease-in-out;
    }
 
-   .primary-navigation.underlined-indicator > .active{
+   .primary-navigation.underlined-indicator > .active-true{
       border: 0;
    }
 
-   .primary-navigation .active{
+   .primary-navigation .active-true{
       position: relative;
    }
 
-   .primary-navigation .active::before {
+   .primary-navigation .active-true::before {
       content: '';
       position: absolute;
       background-color: #fff;

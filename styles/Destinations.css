@@ -5,7 +5,6 @@
 }
 
 .grid-container--destination {
-   --flow-space: 2rem;
    grid-template-areas:
       'title'
       'image'
@@ -65,5 +64,16 @@
    .destination-meta {
       justify-content: start;
       --gap: min(8vw, 5rem);
+   }
+
+   .grid-container--destination {
+      grid-template-areas:
+         '. title title .'
+         '. image tabs .'
+         '. image content .';
+   }
+
+   .grid-container--destination > .destination-image {
+      max-width: 90%;
    }
 }

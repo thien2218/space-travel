@@ -16,10 +16,11 @@ export const getStaticProps = async () => {
 
 const Destination = ({ destinations }) => {
    const [active, setActive] = useState(0);
+   const planet = destinations[active];
 
    return (
       <main id='main' className="grid-container grid-container--destination flow">
-         <h1 className='numbered-title'><span aria-hidden='true'>01</span> pick your destination</h1>
+         <h1 className='numbered-title'><span aria-hidden='true'>01</span>pick your destination</h1>
 
          <div className='destination-image'>
             <Image src={images.planets[active]} alt='The moon' />
@@ -31,20 +32,18 @@ const Destination = ({ destinations }) => {
             ))}
          </div>
 
-         <article className='destination-info'>
-            <h2 className='fs-800 uppercase ff-serif'>{destinations[active].name}</h2>
-
-            <p className='text-accent'>{destinations[active].description}</p>
-
+         <article className='destination-info flow'>
+            <h2 className='fs-800 uppercase ff-serif'>{planet.name}</h2>
+            <p className='text-accent'>{planet.description}</p>
             <div className='flex destination-meta'>
                <div>
                   <h3 className="fs-200 ff-sans-cond letter-spacing-3 uppercase text-accent">Avg. distance</h3>
-                  <p className='ff-serif uppercase'>{destinations[active].distance}</p>
+                  <p className='ff-serif uppercase'>{planet.distance}</p>
                </div>
                
                <div>
                   <h3 className="fs-200 ff-sans-cond letter-spacing-3 uppercase text-accent">Est. travel time</h3>
-                  <p className='ff-serif uppercase'>{destinations[active].travel}</p>
+                  <p className='ff-serif uppercase'>{planet.travel}</p>
                </div>
             </div>
          </article>

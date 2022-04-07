@@ -127,7 +127,7 @@ const DesignSystem = () => {
                   </div>
 
                   {/* Numbers */}
-                  <div className='number-indicator grid'>
+                  <div className='number-indicator flex'>
                      <button className='ff-serif fs-600' aria-selected='true'>1</button>
                      <button className='ff-serif fs-600' aria-selected='false'>2</button>
                      <button className='ff-serif fs-600' aria-selected='false'>3</button>

@@ -17,16 +17,16 @@ const Header = ({ pathname }) => {
 
          <nav>
             <ul id='primary-nav' className={`flex primary-navigation underlined-indicator ${open ? 'slide-in' : ''}`}>
-               <Link href='/'><li className={`uppercase ff-sans-cond letter-spacing-2 fs-300 ${pathname==''?'active':''}`}>
+               <Link href='/'><li className={`uppercase ff-sans-cond letter-spacing-2 fs-300 active-${pathname==''}`}>
                   <a><span aria-hidden='true'>00</span>Home</a>
                </li></Link>
-               <Link href='/destination'><li className={`uppercase ff-sans-cond letter-spacing-2 fs-300 ${pathname=='destination'?'active':''}`}>
+               <Link href='/destination'><li className={`uppercase ff-sans-cond letter-spacing-2 fs-300 active-${pathname=='destination'}`}>
                   <a><span aria-hidden='true'>01</span>Destination</a>
                </li></Link>
-               <Link href='/crew'><li className={`uppercase ff-sans-cond letter-spacing-2 fs-300 ${pathname=='crew'?'active':''}`}>
+               <Link href='/crew'><li className={`uppercase ff-sans-cond letter-spacing-2 fs-300 active-${pathname=='crew'}`}>
                   <a><span aria-hidden='true'>02</span>Crew</a>
                </li></Link>
-               <Link href='/technology'><li className={`uppercase ff-sans-cond letter-spacing-2 fs-300 ${pathname=='technology'?'active':''}`}>
+               <Link href='/technology'><li className={`uppercase ff-sans-cond letter-spacing-2 fs-300 active-${pathname=='technology'}`}>
                   <a><span aria-hidden='true'>03</span>Technology</a>
                </li></Link>
             </ul>
