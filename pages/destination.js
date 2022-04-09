@@ -26,27 +26,29 @@ const Destination = ({ destinations }) => {
             <Image src={images.planets[active]} alt='The moon' />
          </div>
 
-         <div className='tab-list underlined-indicator flex'>
-            {destinations.map((destination, index) => (
-               <button key={index} onClick={() => setActive(index)} aria-selected={`${active == index}`} className='uppercase text-accent ff-sans-cond letter-spacing-2'>{destination.name}</button>
-            ))}
-         </div>
-
-         <article className='destination-info flow'>
-            <h2 className='fs-800 uppercase ff-serif'>{planet.name}</h2>
-            <p className='text-accent'>{planet.description}</p>
-            <div className='flex destination-meta'>
-               <div>
-                  <h3 className="fs-200 ff-sans-cond letter-spacing-3 uppercase text-accent">Avg. distance</h3>
-                  <p className='ff-serif uppercase'>{planet.distance}</p>
-               </div>
-               
-               <div>
-                  <h3 className="fs-200 ff-sans-cond letter-spacing-3 uppercase text-accent">Est. travel time</h3>
-                  <p className='ff-serif uppercase'>{planet.travel}</p>
-               </div>
+         <div className='destination-content flow-1'>
+            <div className='tab-list underlined-indicator flex'>
+               {destinations.map((destination, index) => (
+                  <button key={index} onClick={() => setActive(index)} aria-selected={`${active == index}`} className='uppercase text-accent ff-sans-cond letter-spacing-2'>{destination.name}</button>
+               ))}
             </div>
-         </article>
+            
+            <article className='destination-info'>
+               <h2 className='fs-800 uppercase ff-serif'>{planet.name}</h2>
+               <p className='text-accent'>{planet.description}</p>
+               <div className='flex destination-meta'>
+                  <div>
+                     <h3 className="fs-200 ff-sans-cond letter-spacing-3 uppercase text-accent">Avg. distance</h3>
+                     <p className='ff-serif uppercase'>{planet.distance}</p>
+                  </div>
+                  
+                  <div>
+                     <h3 className="fs-200 ff-sans-cond letter-spacing-3 uppercase text-accent">Est. travel time</h3>
+                     <p className='ff-serif uppercase'>{planet.travel}</p>
+                  </div>
+               </div>
+            </article>
+         </div>
       </main>
    )
 }

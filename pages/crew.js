@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { images } from '../public/constants';
 
 export const getStaticProps = async () => {

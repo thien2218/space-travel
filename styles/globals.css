@@ -146,6 +146,10 @@ textarea {
    margin-top: var(--flow-space, 1rem) !important;
 }
 
+.flow-1 > *:where(:not(:first-child)) {
+   margin-top: 2rem;
+}
+
 .container {
    max-width: 80rem;
    margin-inline: auto;
@@ -330,7 +334,8 @@ textarea {
    display: grid;
    text-align: center;
    place-items: center;
-   padding: 0 1rem 3rem 1rem;
+   padding-inline: 1rem;
+   padding-bottom: 3rem;
 }
 
 .numbered-title {
@@ -364,7 +369,7 @@ textarea {
    .grid-container {
       grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(1rem, 1fr);
       text-align: left;
-      gap: var(--container-gap, 2rem);
+      column-gap: var(--container-gap, 2rem);
    }
 
    .grid-container--home {
@@ -380,12 +385,7 @@ textarea {
       grid-column: 3;
    }
 
-   .grid-container--destination {
-      justify-items: start;
-      align-items: start;
-   }
-
-   .grid-container--crew > *:not(.crew-image) {
+   .grid-container--destination > *:not(.destination-image) {
       justify-self: start;
    }
 }
