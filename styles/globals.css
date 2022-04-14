@@ -299,7 +299,7 @@ textarea {
 }
 
 .number-indicator > * {
-   padding: 0 30px;
+   padding-inline: min(5vw, 30px);
    aspect-ratio: 1;
    border-radius: 50%;
    border: 1px solid rgba( var(--color-white), .25 );
@@ -392,5 +392,10 @@ textarea {
 
    .grid-container--crew {
       grid-template-columns: minmax(1rem, 1fr) minmax(0, 45rem) minmax(0, 35rem) minmax(1rem, 1fr);
+   }
+
+   .grid-container--technology {
+      grid-template-columns: minmax(1rem, 1fr) minmax(15rem, 50rem) minmax(0, 25rem) minmax(1rem, 1fr);
+      justify-items: start;
    }
 }

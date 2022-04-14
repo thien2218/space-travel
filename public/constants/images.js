@@ -8,9 +8,12 @@ import mars from '../assets/destination/image-mars.png';
 import titan from '../assets/destination/image-titan.png';
 import europa from '../assets/destination/image-europa.png';
 
-import launchVehicle from '../assets/technology/image-launch-vehicle-landscape.jpg';
-import spaceport from '../assets/technology/image-spaceport-landscape.jpg';
-import spaceCapsule from '../assets/technology/image-space-capsule-landscape.jpg';
+import launchVehicleLandscape from '../assets/technology/image-launch-vehicle-landscape.jpg';
+import spaceportLandscape from '../assets/technology/image-spaceport-landscape.jpg';
+import spaceCapsuleLandscape from '../assets/technology/image-space-capsule-landscape.jpg';
+import launchVehiclePortrait from '../assets/technology/image-launch-vehicle-portrait.jpg';
+import spaceportPortrait from '../assets/technology/image-spaceport-portrait.jpg';
+import spaceCapsulePortrait from '../assets/technology/image-space-capsule-portrait.jpg';
 
 import logo from '../assets/shared/logo.svg';
 
@@ -27,11 +30,18 @@ const images = {
       europa,
       titan,
    ],
-   tech: [
-      launchVehicle,
-      spaceport,
-      spaceCapsule,
-   ],
+   tech: {
+      landscape: [
+         launchVehicleLandscape,
+         spaceportLandscape,
+         spaceCapsuleLandscape,
+      ],
+      portrait: [
+         launchVehiclePortrait,
+         spaceportPortrait,
+         spaceCapsulePortrait,
+      ]
+   },
    logo,
 }
 

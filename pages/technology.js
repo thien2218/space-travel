@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { images } from '../public/constants';
 
 export const getStaticProps = async () => {
@@ -16,17 +16,30 @@ export const getStaticProps = async () => {
 
 const Technology = ({ technology, changeTab }) => {
    const [active, setActive] = useState(0);
+   const [view, setView] = useState('')
    const tech = technology[active];
+
+   useEffect(() => {
+      if(window.innerWidth < 720) {
+         setView('landscape');
+      } else setView('portrait');
+
+      window.addEventListener('resize', () => {
+         if(window.innerWidth < 720) {
+            setView('landscape');
+         } else setView('portrait');
+      })
+   })
    
    return (
       <main id='main' className="grid-container grid-container--technology flow">
          <h1 className='numbered-title'><span aria-hidden='true'>03</span>space launch 101</h1>
 
          <div className="technology-image">
-            <Image src={images.tech[active]} alt='Technology' />
+            <Image src={images.tech[view][active]} alt='Technology' />
          </div>
 
-         <article className='technology-info grid'>
+         <article className='technology-info flex'>
             <div className='number-indicator flex' onKeyDown={e => changeTab(e, 3)}>
                {technology.map((t, index) => (
                   <button key={index} onClick={() => setActive(index)} className='ff-serif fs-600' aria-selected={`${active==index}`}>{index+1}</button>

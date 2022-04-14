@@ -11,6 +11,7 @@
 
 .grid-container--crew {
    --flow-space: 2rem;
+   grid-template-rows: repeat(4, min-content);
    grid-template-areas:
    'title'
    'image'
@@ -76,7 +77,6 @@
 
    .grid-container--crew {
       --flow-space: 0;
-      grid-template-columns: minmax(1rem, 1fr) minmax(0, 45rem) minmax(0, 35rem) minmax(1rem, 1fr);
       grid-template-rows: min-content 3fr 1fr;
       grid-template-areas:
       '. title title .'
