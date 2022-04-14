@@ -387,5 +387,10 @@ textarea {
 
    .grid-container--destination > *:not(.destination-image) {
       justify-self: start;
+      align-self: start;
+   }
+
+   .grid-container--crew {
+      grid-template-columns: minmax(1rem, 1fr) minmax(0, 45rem) minmax(0, 35rem) minmax(1rem, 1fr);
    }
 }

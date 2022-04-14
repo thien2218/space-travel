@@ -14,7 +14,7 @@ export const getStaticProps = async () => {
    }
 }
 
-const Crew = ({ crew }) => {
+const Crew = ({ crew, changeTab }) => {
    const [active, setActive] = useState(0);
    const member = crew[active];
 
@@ -22,9 +22,9 @@ const Crew = ({ crew }) => {
       <main id='main' className="grid-container grid-container--crew flow">
          <h1 className='numbered-title'><span aria-hidden='true'>02</span>meet your crew</h1>
 
-         <div className='crew-image'>
+         <picture className='crew-image'>
             <Image src={images.crew[active]} alt='Crew member' />
-         </div>
+         </picture>
 
          <article className='crew-info'>
             <h2 className="role uppercase ff-serif fs-600">{member.role}</h2>
@@ -32,7 +32,7 @@ const Crew = ({ crew }) => {
             <p className="text-accent">{member.bio}</p>
          </article>
 
-         <div className='dot-indicator flex'>
+         <div className='dot-indicator flex' onKeyDown={e => changeTab(e, 4)} >
             {crew.map((mem, index) => (
                <button onClick={() => setActive(index)} key={index} aria-selected={`${active == index}`}><span className="sr-only">{mem.name}</span></button>
             ))}

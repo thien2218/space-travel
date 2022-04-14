@@ -14,7 +14,7 @@ export const getStaticProps = async () => {
    }
 }
 
-const Destination = ({ destinations }) => {
+const Destination = ({ destinations, changeTab }) => {
    const [active, setActive] = useState(0);
    const planet = destinations[active];
 
@@ -22,12 +22,12 @@ const Destination = ({ destinations }) => {
       <main id='main' className="grid-container grid-container--destination flow">
          <h1 className='numbered-title'><span aria-hidden='true'>01</span>pick your destination</h1>
 
-         <div className='destination-image'>
+         <picture className='destination-image'>
             <Image src={images.planets[active]} alt='The moon' />
-         </div>
+         </picture>
 
          <div className='destination-content flow-1'>
-            <div className='tab-list underlined-indicator flex'>
+            <div className='tab-list underlined-indicator flex' onKeyDown={e => changeTab(e, 4)}>
                {destinations.map((destination, index) => (
                   <button key={index} onClick={() => setActive(index)} aria-selected={`${active == index}`} className='uppercase text-accent ff-sans-cond letter-spacing-2'>{destination.name}</button>
                ))}

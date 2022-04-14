@@ -14,7 +14,7 @@ export const getStaticProps = async () => {
    }
 }
 
-const Technology = ({ technology }) => {
+const Technology = ({ technology, changeTab }) => {
    const [active, setActive] = useState(0);
    const tech = technology[active];
    
@@ -27,7 +27,7 @@ const Technology = ({ technology }) => {
          </div>
 
          <article className='technology-info grid'>
-            <div className='number-indicator flex'>
+            <div className='number-indicator flex' onKeyDown={e => changeTab(e, 3)}>
                {technology.map((t, index) => (
                   <button key={index} onClick={() => setActive(index)} className='ff-serif fs-600' aria-selected={`${active==index}`}>{index+1}</button>
                ))}
