@@ -1,22 +1,12 @@
 import React from 'react';
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { images } from '../public/constants';
+import Data from '../db.json';
 
-export const getStaticProps = async () => {
-   const res = await fetch('http://localhost:3000/api');
-   const data = await res.json();
-
-   return {
-      props: {
-         crew: data.crew || {},
-      }
-   }
-}
-
-const Crew = ({ crew, changeTab }) => {
+const Crew = ({ changeTab }) => {
    const [active, setActive] = useState(0);
-   const member = crew[active];
+   const crew = Data.crew;
 
    return (
       <main id='main' className="grid-container grid-container--crew flow">
@@ -27,9 +17,9 @@ const Crew = ({ crew, changeTab }) => {
          </picture>
 
          <article className='crew-info'>
-            <h2 className="role uppercase ff-serif fs-600">{member.role}</h2>
-            <p className="ff-serif fs-700 uppercase">{member.name}</p>
-            <p className="text-accent">{member.bio}</p>
+            <h2 className="role uppercase ff-serif fs-600">{crew[active].role}</h2>
+            <p className="ff-serif fs-700 uppercase">{crew[active].name}</p>
+            <p className="text-accent">{crew[active].bio}</p>
          </article>
 
          <div className='dot-indicator flex' onKeyDown={e => changeTab(e, 4)} >

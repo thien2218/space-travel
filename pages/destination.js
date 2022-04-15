@@ -2,21 +2,11 @@ import React from 'react';
 import Image from 'next/image';
 import { useState } from 'react';
 import { images } from '../public/constants';
+import Data from '../db.json';
 
-export const getStaticProps = async () => {
-   const res = await fetch('http://localhost:3000/api');
-   const data = await res.json();
-
-   return {
-      props: {
-         destinations: data.destinations || {},
-      }
-   }
-}
-
-const Destination = ({ destinations, changeTab }) => {
+const Destination = ({ changeTab }) => {
    const [active, setActive] = useState(0);
-   const planet = destinations[active];
+   const destinations = Data.destinations;
 
    return (
       <main id='main' className="grid-container grid-container--destination flow">
@@ -34,17 +24,17 @@ const Destination = ({ destinations, changeTab }) => {
             </div>
             
             <article className='destination-info'>
-               <h2 className='fs-800 uppercase ff-serif'>{planet.name}</h2>
-               <p className='text-accent'>{planet.description}</p>
+               <h2 className='fs-800 uppercase ff-serif'>{destinations[active].name}</h2>
+               <p className='text-accent'>{destinations[active].description}</p>
                <div className='flex destination-meta'>
                   <div>
                      <h3 className="fs-200 ff-sans-cond letter-spacing-3 uppercase text-accent">Avg. distance</h3>
-                     <p className='ff-serif uppercase'>{planet.distance}</p>
+                     <p className='ff-serif uppercase'>{destinations[active].distance}</p>
                   </div>
                   
                   <div>
                      <h3 className="fs-200 ff-sans-cond letter-spacing-3 uppercase text-accent">Est. travel time</h3>
-                     <p className='ff-serif uppercase'>{planet.travel}</p>
+                     <p className='ff-serif uppercase'>{destinations[active].travel}</p>
                   </div>
                </div>
             </article>
