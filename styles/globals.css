@@ -337,6 +337,9 @@ textarea {
    padding-inline: 1rem;
    padding-bottom: 3rem;
 }
+.grid-container p {
+   max-width: 50ch;
+}
 
 .numbered-title {
    grid-area: title;
@@ -346,8 +349,11 @@ textarea {
    line-height: .8;
 }
 
-.grid-container p {
-   max-width: 50ch;
+.intro {
+   --flow-space: 1.5rem;
+}
+.intro h1 span {
+   margin-bottom: 1.5rem;
 }
 
 @media (min-width: 35em) {
@@ -373,7 +379,7 @@ textarea {
    }
 
    .grid-container--home {
-      padding-bottom: max(6rem, 20vh);
+      padding-bottom: max(5.5rem, 15vh);
       align-items: end;
    }
 
@@ -383,6 +389,10 @@ textarea {
    
    .grid-container--home > *:last-child {
       grid-column: 3;
+   }
+
+   .grid-container--home > .explore {
+      transform: translateX(30%);
    }
 
    .grid-container--destination > *:not(.destination-image) {
